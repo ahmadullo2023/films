@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../screen/film_card.dart';
 
 class SaveFilm extends StatelessWidget {
-  SaveFilm({super.key, this.index});
+  SaveFilm({super.key, this.index, this.saveState2});
 
   int? index;
+  Box? saveState2;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class SaveFilm extends StatelessWidget {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
-            "${box1.getAt(index!)}",
+            "${saveState2?.getAt(index!)}",
           ),
         ),
       ),
