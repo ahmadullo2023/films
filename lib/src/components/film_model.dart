@@ -3,7 +3,7 @@ import 'articles_model.dart';
 class FilmsModel {
   String? status;
   int? totalResults;
-  List<Articles>? articles;
+  List<Article>? articles;
 
   FilmsModel({this.status, this.totalResults, this.articles});
 
@@ -11,9 +11,9 @@ class FilmsModel {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
-      articles = <Articles>[];
+      articles = <Article>[];
       json['articles'].forEach((v) {
-        articles!.add(Articles.fromJson(v));
+        articles!.add(Article.fromJson(v));
       });
     }
   }

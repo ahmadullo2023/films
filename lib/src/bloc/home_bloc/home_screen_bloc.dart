@@ -14,11 +14,11 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   void fetchServiceData(ServiceDataEvent event, Emitter<HomeScreenState> emit) async {
     emit(state.copyWith(loading: true));
     try{
-    FilmsModel? filmsModel = await ApiService().fetchFilmsData();
-    emit(state.copyWith(loading: false, articles: filmsModel?.articles));
+      FilmsModel? filmsModel = await ApiService().fetchFilmsData();
+      emit(state.copyWith(loading: false, articles: filmsModel?.articles));
     }
-        catch(e) {
+    catch(e) {
       print("error $e");
-        }
+    }
   }
 }

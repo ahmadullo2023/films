@@ -6,8 +6,3 @@ class ServiceDataEvent extends HomeScreenEvent{
   @override
   List<Object?> get props => [];
 }
-
-
-
-
-

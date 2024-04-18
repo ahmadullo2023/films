@@ -1,4 +1,3 @@
-import 'package:films/src/bloc/save_bloc/save_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/home_bloc/home_screen_bloc.dart';
@@ -31,7 +30,6 @@ class _HomeState extends State<Home> {
             children: [
               ListView(
                 children: [
-              /* if(state is SaveCompletedState){} */
                   CardImage(state: state),
                   const HorizontalListView(),
                   Expanded(

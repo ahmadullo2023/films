@@ -1,13 +1,11 @@
 import 'package:dio/dio.dart';
-import '../components/dog_model.dart';
 import '../components/film_model.dart';
 import '../config/comfig.dart';
 
 final dio = Dio();
 
-class ApiService{
+class ApiService {
   Future<FilmsModel?>? fetchFilmsData() async {
-
     final response = await dio.get(
       AppConfig.baseUrl,
       queryParameters: {
@@ -15,33 +13,15 @@ class ApiService{
         "from": "2024-04-10",
         "sortBy": "publishedAt",
       },
-      options: Options(
-        headers: {
-          "X-Api-Key": "35814a1034d843b5900ee3aff6293903",
-          "Authorization": "35814a1034d843b5900ee3aff6293903",
-        }
-      ),
+      options: Options(headers: {
+        "X-Api-Key": "7840203b3053405c9b71ba9a503cee4f",
+        "Authorization": "7840203b3053405c9b71ba9a503cee4f",
+      }),
     );
-    if (response.statusCode == 200 || response.statusCode == 201){
+    if (response.statusCode == 200 || response.statusCode == 201) {
       return FilmsModel.fromJson(response.data ?? {});
-    }else{
+    } else {
       return null;
     }
   }
 }
-
-
-//
-// class DogService{
-//   Future<DogApi?>? dogFetchData() async{
-//     final dogresponse = await dio.get(
-//         DogConfig.dogBaseUrl,
-//     );
-//     if (dogresponse.statusCode == 200 || dogresponse.statusCode == 201){
-//       return DogApi.fromJson(dogresponse.data ?? {});
-//     }else{
-//       return null;
-//     }
-//
-//   }
-// }

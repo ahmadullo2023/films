@@ -34,8 +34,8 @@ class HorizontalListView extends StatelessWidget {
                 itemCount: state.articles?.length ?? 0,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  final article = state.articles?[index + 1];
-                  return FilmsView(article: article);
+                  final articles = state.articles?[index + 1];
+                  return FilmsView(articles: articles);
                 },
               ),
             ),

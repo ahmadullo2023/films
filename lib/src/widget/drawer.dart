@@ -14,21 +14,19 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.black,
-            ),
-            child: Text('Drawer Header', style: TextStyle(color: Colors.white))),
+              decoration: BoxDecoration(
+                color: Colors.black,
+              ),
+              child:
+                  Text('Drawer Header', style: TextStyle(color: Colors.white))),
           ListTile(
-            leading: const Icon(
-              Icons.save,
-              color: Colors.black
-            ),
+            leading: const Icon(Icons.save, color: Colors.black),
             title: const Text('Save', style: TextStyle(color: Colors.black)),
             onTap: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => const SavePage()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const SavePage()));
             },
           ),
         ],

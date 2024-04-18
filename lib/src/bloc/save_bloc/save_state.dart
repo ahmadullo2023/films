@@ -1,21 +1,49 @@
 import 'package:equatable/equatable.dart';
-import 'package:films/src/components/articles_model.dart';
-import 'package:hive/hive.dart';
+import '../../components/articles_model.dart';
+// import '../../components/articles_model.dart';
 
-abstract class SaveState extends Equatable {
-  const SaveState(/*this.box2, this.box3*/);
+// abstract class SaveState extends Equatable {
+//   const SaveState(/*this.box2, this.box3*/);
+//
+//   // final Box box2;
+//   // final Box box3;
+//
+//   @override
+//   List<Object?> get props => [article];
+// }
+//
+// class SaveInitialState extends SaveState{}
+// class SaveLoadingState extends SaveState{}
+// class SaveCompletedState extends SaveState{
+// final List<Article> article;
+// const SaveCompletedState({required this.article});
+// }
+// class SaveFailedState extends SaveState{}
 
-  // final Box box2;
-  // final Box box3;
+
+
+class SaveState extends Equatable {
+  const SaveState({ this.article1 , this.loading});
+
+  final List<String>? article1;
+  final bool? loading;
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [article1, loading];
+
+  SaveState copyWith({
+    List<String>? article1,
+    bool? loading,
+  }) {
+    return SaveState(
+      article1: article1 ?? this.article1,
+      loading: loading ?? this.loading,
+    );
+  }
 }
 
-class SaveInitialState extends SaveState{}
-class SaveLoadingState extends SaveState{}
-class SaveCompletedState extends SaveState{
-final List<Articles> articles;
-const SaveCompletedState({required this.articles});
-}
-class SaveFailedState extends SaveState{}
+
+
+
+
+

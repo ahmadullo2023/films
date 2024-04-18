@@ -1,23 +1,28 @@
 import 'package:equatable/equatable.dart';
+import '../../components/articles_model.dart';
+
+// abstract class SaveEvent extends Equatable {}
+//
+// class SaveDataEvent extends SaveEvent{
+//    final Article article;
+//
+//    SaveDataEvent({required this.article});
+//
+//   @override
+//   List<Object?> get props => [];
+// }
+
+
 
 abstract class SaveEvent extends Equatable {}
 
 class SaveDataEvent extends SaveEvent{
-  @override
-  List<Object?> get props => [];
-}
 
-class SaveDateEvent extends SaveEvent{
+  // final Article article1;
+  final String article1;
 
-  // final int incrementNumber;
-  // IncrementEvent({required this.incrementNumber});
+  SaveDataEvent({required this.article1});
 
   @override
   List<Object?> get props => [];
 }
-
-
-
-
-
-
