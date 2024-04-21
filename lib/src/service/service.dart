@@ -14,8 +14,8 @@ class ApiService {
         "sortBy": "publishedAt",
       },
       options: Options(headers: {
-        "X-Api-Key": "7840203b3053405c9b71ba9a503cee4f",
-        "Authorization": "7840203b3053405c9b71ba9a503cee4f",
+        "X-Api-Key": "35814a1034d843b5900ee3aff6293903",
+        "Authorization": "35814a1034d843b5900ee3aff6293903",
       }),
     );
     if (response.statusCode == 200 || response.statusCode == 201) {

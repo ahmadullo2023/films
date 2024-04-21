@@ -34,11 +34,14 @@ class SaveBloc extends Bloc<SaveEvent, SaveState> {
     emit(state.copyWith(loading: true));
     try{
 
-      var box = await Hive.openBox<String>("ImageDescription");
+      var box = await Hive.openBox<Map<String, String>>("ImageAndDes15");
 
       box.add(event.article1);
 
-      print("BOOOOOOOOOOOOOOOX${box.values.toList()}");
+      print("BOOOOOOOOOOOOOOOX${box.values.toList().toString()}");
+      List list = box.values.toList();
+      print("KEEEEEEEEEEEEEEYS${list[0].keys.toString()}");
+      print("KEEEEEEEEEEEEEEYS${list[0].values}");
 
       emit(state.copyWith(loading: false, article1: box.values.toList()));
     }

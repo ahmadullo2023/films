@@ -5,9 +5,6 @@ import '../bloc/save_bloc/save_event.dart';
 import '../bloc/save_bloc/save_state.dart';
 import '../components/articles_model.dart';
 
-// late Box box;
-// late Box box1;
-
 class FilmCard extends StatefulWidget {
   const FilmCard({super.key, required this.article1});
 
@@ -18,7 +15,6 @@ class FilmCard extends StatefulWidget {
 }
 
 class _FilmCardState extends State<FilmCard> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +60,10 @@ class _FilmCardState extends State<FilmCard> {
                   // saveToHive(widget.article1);
                   context.read<SaveBloc>().add(
                         SaveDataEvent(
-                          article1: widget.article1.urlToImage.toString(),
+                          article1: {
+                            "${widget.article1.urlToImage}":
+                            "${widget.article1.description}"
+                         },
                         ),
                       );
                 },
@@ -80,17 +79,3 @@ class _FilmCardState extends State<FilmCard> {
     );
   }
 }
-
-
-
-// void saveToHive(articles) async {
-//
-// box = await Hive.openBox("ImageDescription");
-//
-// box.add(articles.urlToImage);
-// box1 = box;
-//
-// print("BoxValue${box.values}");
-// print("BoxKey${box.keys}");
-//
-// }

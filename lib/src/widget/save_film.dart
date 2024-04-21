@@ -18,12 +18,11 @@ class SaveFilm extends StatelessWidget {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
-           // "${state.article1[index].urlToImage}",
-            "${state.article1[index]}",
+             "${state.article1[index].keys.toList()[0]}",
           ),
         ),
       ),
-      //child: Text("${state.article1}"),
+       // child: Text("${state.article1[index].values}"),
     );
   }
 }

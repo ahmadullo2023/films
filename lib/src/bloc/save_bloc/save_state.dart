@@ -25,14 +25,15 @@ import '../../components/articles_model.dart';
 class SaveState extends Equatable {
   const SaveState({ this.article1 , this.loading});
 
-  final List<String>? article1;
+  final List<Map<String, String>>? article1;
   final bool? loading;
 
   @override
   List<Object?> get props => [article1, loading];
 
   SaveState copyWith({
-    List<String>? article1,
+    List<Map<String, String>>? article1,
+
     bool? loading,
   }) {
     return SaveState(
